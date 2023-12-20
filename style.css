@@ -287,7 +287,7 @@ header nav ul li a {
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   background-image: url('background.png');
+   background-image: url('images/background.png');
    background-attachment: fixed;
    background-position: center;
    background-repeat: no-repeat;
@@ -1202,7 +1202,7 @@ header nav ul li a {
    display: inline-block; /* Treat them as inline elements */
    width: 50px; /* Width of the quote image */
    height: 50px; /* Height of the quote image */
-   background: url('quote.png') no-repeat center center; /* Adjust with the correct path */
+   background: url('images/quote.png') no-repeat center center; /* Adjust with the correct path */
    background-size: contain;
 }
 
