@@ -1,0 +1,1618 @@
+/* Basic Reset */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+ }
+ 
+body {
+   font-family: 'Inter', sans-serif; /* Assuming 'Inter' is the font you're using */
+   line-height: 1.6;
+   color: #333; /* This color for general text, adjust if needed */
+}
+
+/* Classes for background colors */
+.bg-dark-blue { background-color: #1D3556; }
+.bg-medium-blue { background-color: #4D607B; }
+.bg-light-blue { background-color: #99AEC1; }
+.bg-dark-red { background-color: #DB1F26; }
+.bg-medium-red { background-color: #E73B47; }
+.bg-light-gray { background-color: #F7F9FB; }
+
+/* preloader */
+#preloader {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: 9999;
+   overflow: hidden;
+   background: #fff;
+ }
+ 
+ #preloader:before {
+   content: "";
+   position: fixed;
+   top: calc(50% - 30px);
+   left: calc(50% - 30px);
+   border: 6px solid #cc1616;
+   border-top-color: #efefef;
+   border-radius: 50%;
+   width: 60px;
+   height: 60px;
+   -webkit-animation: animate-preloader 1s linear infinite;
+   animation: animate-preloader 1s linear infinite;
+ }
+ 
+ @-webkit-keyframes animate-preloader {
+   0% {
+     transform: rotate(0deg);
+   }
+ 
+   100% {
+     transform: rotate(360deg);
+   }
+ }
+ 
+ @keyframes animate-preloader {
+   0% {
+     transform: rotate(0deg);
+   }
+ 
+   100% {
+     transform: rotate(360deg);
+   }
+}
+
+/* Header and Navigation Styles */
+header {
+   background: linear-gradient(270.03deg, #1D3556 0.02%, rgba(29, 53, 86, 0.71) 99.98%);
+   display: flex; /* Use flexbox for layout */
+   justify-content: space-between; /* Space out logo, nav, and button */
+   align-items: center; /* Vertically center all items */
+   padding: 1em; /* Adjust padding as needed */
+   position: relative; /* Use relative for positioning within the header */
+   width: 100%; /* Full width */
+}
+
+.header-content {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 1; /* Higher z-index to ensure header content is above the rectangle */
+   padding: 1em 2em;
+   position: relative;
+   width: auto; /* Full width of the container */
+   height: 108; /* Full height of the container */
+}
+
+header .nav-logo img {
+   display: flex;
+   padding-left: 3em;
+   height: 46.5px; /* Or the height of your logo */
+   z-index: 1; /* Higher z-index to ensure header content is above the rectangle */
+   width: 117; /* Maintain aspect ratio */
+}
+
+
+/* Back to top button */
+
+.back-to-top {
+   position: fixed;
+   visibility: hidden;
+   opacity: 0;
+   right: 15px;
+   bottom: 15px;
+   z-index: 996;
+   background: #DB1F26;
+   width: 40px;
+   height: 40px;
+   transition: all 0.4s;
+ }
+ 
+ .back-to-top i {
+   font-size: 40px;
+   color: #fff;
+   line-height: 0;
+ }
+ 
+ .back-to-top:hover {
+   background: #1D3556;
+   color: #fff;
+ }
+ 
+ .back-to-top.active {
+   visibility: visible;
+   opacity: 1;
+ }
+
+.navbar-toggler {
+   display: none;
+   align-items: center;
+   justify-content: flex-start;
+   background: transparent;
+   border: none;
+   padding: 10px; /* Increase padding for a larger clickable area */
+   cursor: pointer;
+}
+
+.navbar-toggler-icon {
+   display: block;
+   width: 30px; /* Width of the hamburger icon */
+   height: 3px; /* Height of the middle line */
+   background-color: #ffffff; /* Color of the hamburger lines */
+   position: relative;
+   transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+   content: '';
+   position: absolute;
+   width: 100%; /* Same width as the middle line */
+   height: 3px; /* Same height as the middle line */
+   background-color: #ffffff; /* Same color as the middle line */
+   transition: all 0.3s ease-in-out;
+      justify-content: center;
+   align-items: center;
+}
+
+.navbar-toggler-icon::before {
+   top: -10px; /* Position above the middle line */
+}
+
+.navbar-toggler-icon::after {
+   top: 10px; /* Position below the middle line */
+}
+
+
+.nav-links {
+   display: flex;
+   justify-items: center;
+   align-items: center;
+   margin: 0;
+   padding: 0;
+   z-index: 1; /* Higher z-index to ensure header content is above the rectangle */
+   list-style-type: none;
+   text-decoration: none; /* Removes the underline from links */
+   color: initial; /* Sets the initial color for the link */
+   transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.nav-links a:hover {
+   color: #1D3556; /* Changes color on hover */
+}
+
+.nav-links li a {
+   color: #ffffff;
+   text-decoration: none;
+   padding: 0.5em 1em;
+   z-index: 1; /* Higher z-index to ensure header content is above the rectangle */
+   display: block;
+}
+
+.cta-button-header {
+   background-color: #DB1F26; /* Red background */
+   color: #ffffff; /* White text */
+   padding: 0.5em 1em; /* Reduced padding */
+   text-decoration: none; /* No underline */
+   margin-right: 8em;
+   border-radius: 40px; /* Rounded corners */
+   font-size: 1.5em; /* Reduced font size */
+   cursor: pointer;
+   display: inline-block; /* Inline-block for proper sizing */
+   white-space: nowrap; /* Keep text in a single line */
+   overflow: hidden; /* Prevent overflow */
+   text-overflow: ellipsis; /* Add ellipsis if text is too long */
+   line-height: 1; /* Adjust line height to ensure it fits within the button */
+   border: none; /* No border */
+   outline: none; /* No outline */
+   transition: background-color 0.3s, transform 0.3s;
+   height: 100%; /* Make button height equal to the header's height */
+   box-sizing: border-box; /* Ensure padding is included in the height */
+}
+
+.cta-button-header:hover {
+   background-color: #E63946; /* Lighter shade of red for hover state */
+   transform: scale(1.05); /* Slightly increase size on hover for effect */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for depth */
+}
+
+.cta-button {
+   background-color: #DB1F26;
+   color: #ffffff;
+   padding: 0.5em 1.5em;
+   text-decoration: none;
+   border-radius: 40px;
+   cursor: pointer;
+   text-decoration: none; /* Remove underline from links */
+   display: inline-block; /* To allow setting padding */
+   transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button2 {
+   background-color: #99AEC1;;
+   color: #ffffff;
+   padding: 0.5em 1em;
+   text-decoration: none;
+   border-radius: 40px;
+   font-size: 1.5em;
+   text-decoration: none; /* Remove underline from links */
+   display: flex; /* To allow setting padding */
+   transition: background-color 0.3s, transform 0.3s;
+   z-index: 2; /* Higher than the overlay's z-index */
+}
+
+header nav {
+   z-index: 1; /* Higher z-index to ensure header content is above the rectangle */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative; /* Added for positioning the contact button absolutely within the navigation */
+}
+
+header nav #logo {
+   position: absolute;
+   left: 2em; /* Adjust as needed based on your design */
+   z-index: 1; /* Higher z-index to ensure header content is above the rectangle */
+   top: 50%;
+   transform: translateY(-50%); /* Centers the logo vertically */
+}
+
+header nav ul {
+   list-style: none;
+   display: flex;
+   padding: 0;
+   margin: 0 auto; /* Centers the menu items */
+}
+
+header nav ul li {
+   padding: 0 1em; /* Adjust based on your design */
+}
+
+header nav ul li a {
+   color: #ffffff;
+   text-decoration: none;
+   font-size: 1em; /* Adjust based on your design */
+}
+
+/* Hero Section Styles */
+.hero-section {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-image: url('background.png');
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+   text-align: center;
+   padding: 4em 2em;
+   width: auto; /* Full width of the container */
+   height: 764px; /* Full height of the container */
+   z-index: 1;
+}
+.hero-section h1 {
+    font-size: 36px; /* Adjust this value to the size you prefer */
+    /* Additional styling as needed */
+}
+
+/* Center the hero content */
+.hero-content {
+   padding-bottom: 2em;
+}
+
+/* Overlay Rectangle Styling */
+.hero-section::before {
+   content: ''; /* Necessary for pseudo-elements */
+   position: absolute; /* Positioning relative to the hero-section */
+   top: 0;
+   left: 0;
+   width: 100%; /* Full width of the container */
+   height: 100%; /* Full height of the container */
+   background: rgba(29, 53, 86, 0.8); /* RGBA color for the overlay with opacity */
+   z-index: 2; /* Ensure it's above the background image but below the content */
+}
+
+/* Decorative Graphic */
+.top-right-graphic {
+   position: absolute;
+   top: 0; /* Align to the top of the relative container */
+   right: 0; /* Align to the right of the relative container */
+   width: 20%; /* Adjust the size to fit the design. This limits the width to 20% of the hero section */
+   height: auto; /* Maintain the aspect ratio */
+   z-index: 4; /* Above the content and the overlay rectangle */
+}
+
+/* Content of hero section should be positioned above the overlay */
+.hero-section h1,
+.hero-section p,
+.cta-button2,
+.hero-section .cta-button-hero {
+   position: relative;
+   z-index: 2; /* Higher than the overlay's z-index */
+   
+}
+
+.cta-button-hero {
+   background-color: #DB1F26;
+   color: #ffffff;
+   padding: 0.5em 1.5em;
+   text-decoration: none;
+   font-weight: bold; 
+   border-radius: 40px;
+   font-size: 1.5em;
+   cursor: pointer;
+   text-decoration: none; /* Remove underline from links */
+   display: inline-block; /* To allow setting padding */
+   transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Button hover effect */
+.cta-button:hover {
+   background-color: #E63946; /* Lighter shade of red for hover state */
+   transform: scale(1.05); /* Slightly increase size on hover for effect */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for depth */
+}
+.cta-button-hero:hover {
+   background-color: #E63946; /* Lighter shade of red for hover state */
+   transform: scale(1.05); /* Slightly increase size on hover for effect */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for depth */
+}
+
+.hero-section h1 {
+   padding-top: 0.5em;
+   font-size: 4em; /* Adjust based on your design */
+   color: #ffffff; /* Adjust if needed */
+   margin-bottom: 0.5em; /* Adjust based on your design */
+}
+
+.hero-section p {
+   font-size: 1.2em; /* Adjust based on your design */
+   color: #ffffff; /* Adjust if needed */
+   margin-bottom: 1.5em; /* Adjust based on your design */
+}
+
+.client-section {
+   position: relative;
+   margin-left: 110px;
+   margin-right: 110px;
+   text-align: center;
+   padding: 2em 0;
+   overflow: hidden;
+}
+
+.client-title {
+   margin: 2em; /* Add some space below the title */
+   font-size: 2em; /* Adjust the font size as needed */
+   color: #1D3556; /* Title color */
+}
+
+.client-logos img {
+   margin: 0 1em; /* Add horizontal space between logos */
+   vertical-align: middle; /* Align logos vertically in the middle */
+   max-height: 50px; /* Adjust based on your design */
+   transition: transform 0.5s ease;
+   transform: scale(1); /* Default state */
+   /* If logos are different sizes, you might want to set a max-width as well */
+}
+.client-logos {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.client-logos img.in-view {
+   transform: scale(1.05); /* Slightly enlarged when in view */
+}
+
+.logo {
+   margin: 0 1em; /* Space between logos and separators */
+   vertical-align: middle;
+   max-height: 50px; /* Control the size of the logos */
+}
+
+.separator {
+   height: 50px; /* Height should match the height of the logos or to your preference */
+   width: 1px; /* Width of the line */
+   background-color: #ccc; /* Color of the line */
+   margin: 0 1em; /* Space around the separator */
+}
+
+.services-section {
+   text-align: center; /* Center text */
+   color: #1D3556;
+   padding: 2em; /* Padding around the section */
+   margin-top: 5em;
+   margin-left: 110px;
+   margin-right: 110px;
+}
+
+.services-header {
+   display: flex;
+   align-items: center; /* Center items vertically */
+   justify-content: space-between; /* Space out title and paragraph */
+}
+
+.services-title {
+   font-size: 2em; /* Large font size for the title */
+   color: #1D3556; /* Title color */
+   flex: 1; /* Take up the remaining space */
+   margin-left: 40px; /* Adjust based on your layout and button size */
+   text-align: left;
+
+}
+.services-description {
+   flex: 1; /* Allow paragraph to take up space */
+   margin-right: 40px; /* Adjust as needed */
+   text-align: left;
+   /* Text styling for paragraph */
+}
+.services-subtitle {
+   margin-bottom: 2em; /* Space below the subtitle */
+   /* Additional styling for the subtitle */
+}
+.service-btn-container {
+   display: flex; /* Use flexbox to layout children */
+   align-items: center; /* Align children vertically */
+   justify-content: flex-start; /* Align children to the start (left) */
+}
+
+.service-btn {
+   background-color: #DB1F26; /* Red background */
+   color: white;
+   padding: 0.5em 1em;
+   border-radius: 20px; /* Rounded corners */
+   text-decoration: none; /* Remove underline from link */
+   margin-right: auto; /* Pushes other items to the right */
+   margin-bottom: 2em; /* Space below the button */
+   cursor: text;
+}
+
+@keyframes fadeInLeft {
+   from {
+       opacity: 0;
+       transform: translateX(-50px);
+   }
+   to {
+       opacity: 1;
+       transform: translateX(0);
+   }
+}
+
+.fade-in-left {
+   animation: fadeInLeft 1s forwards;
+}
+
+.fade-in-right {
+   animation: fadeInRight 2s forwards;
+}
+.fade-in-top {
+   animation: fadeInTop 1s forwards;
+}
+
+.fade-in-bottom {
+   animation: fadeInBottom 1s forwards;
+}
+.hidden {
+   opacity: 0;
+}
+
+@keyframes fadeInRight {
+   from {
+       opacity: 0;
+       transform: translateX(50px);
+   }
+   to {
+       opacity: 1;
+       transform: translateX(0);
+   }
+}
+
+
+@keyframes fadeInTop {
+   from {
+       opacity: 0;
+       transform: translateY(-50px);
+   }
+   to {
+       opacity: 1;
+       transform: translateY(0);
+   }
+}
+
+@keyframes fadeInBottom {
+   from {
+       opacity: 0;
+       transform: translateY(50px);
+   }
+   to {
+       opacity: 1;
+       transform: translateY(0);
+   }
+}
+
+
+
+
+
+.services-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust minmax for your preferred minimum width */
+   gap: 1em; /* Space between grid items */
+   padding: 1em;
+   margin-top: 3em;
+}
+
+.service-item {
+   opacity: 0;
+   transform: translateY(20px);
+   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+   display: flex;
+   align-items: center; /* Aligns the icon and the title vertically */
+   background-color: #ffffff; /* Assuming a white background */
+   border-radius: 10px; /* Rounded corners */
+   padding: 20px; /* Space inside the service item */
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+   margin: 10px; /* Space outside the service item */
+   padding-bottom: 5px; /* Space between title and dotted line */
+   margin-bottom: 10px; /* Space between the title and the description */
+   display: inline-block; /* Required to apply the border-bottom properly */
+
+}
+
+.service-item:hover {
+   transform: scale(1.05); /* Slightly enlarges the item */
+   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Makes the shadow more prominent */
+   background-color: #f8f8f8; /* Lightly changes the background color */
+   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+
+.service-item.visible {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+
+
+.service-item img {
+   width: 50px; /* Adjust based on your icon size */
+   height: auto; /* Maintain aspect ratio */
+   margin-right: 20px;
+
+}
+
+.service-item h3 {
+   margin-bottom: 0.5em; /* Space below the service title */
+   flex-grow: 1;
+   border-bottom: 2px dotted #ccc; /* Dotted line under the title */
+   
+}
+
+.consultation-link {
+   color: #1D3556; /* Set the default text color */
+   font-weight: normal; /* Set the weight of the font */
+   text-decoration: none; /* Remove underline from the link */
+   position: relative; /* For positioning the pseudo-element */
+   padding-left: 30px; /* Space for the circle */
+   display: flex; /* Allows the padding and pseudo-elements to work */
+}
+
+.consultation-link::before {
+   content: ''; /* Pseudo-element for the circle */
+   position: absolute;
+   left: 0; /* Align with the left padding of the link */
+   top: 50%; /* Center vertically */
+   transform: translateY(-50%); /* Centering adjustment */
+   width: 15px; /* Circle width */
+   height: 15px; /* Circle height */
+   background-color: #F0F1F6; /* Circle color */
+   border-radius: 50%; /* Make it round */
+}
+
+.highlight {
+   color: #DB1F26; /* Highlight color, same as the circle */
+   font-weight: bold; /* Make it bold */
+}
+
+.stats-section {
+   background-color: #1D3556; /* Dark blue background */
+   color: #fff; /* White text color */
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   padding: 1em 0; /* Vertical padding */
+}
+
+.stat-item {
+   text-align: center; /* Center the text within each stat item */
+}
+
+.stat-item h3 {
+   font-size: 2em; /* Large font size for the number */
+   margin: 0; /* Reset margin */
+}
+
+.stat-item p {
+   margin: 0; /* Reset margin */
+   /* Additional styling for the description */
+}
+
+.stat-separator {
+   position: relative; /* Needed for absolute positioning of pseudo-elements */
+   height: 50px; /* Height of the separator line */
+   width: 2px; /* Width of the separator line */
+   background-color: #fff; /* White separator line */
+   margin: 0 20px; /* Horizontal margin */
+}
+
+.stat-separator::before {
+   content: '';
+   position: absolute;
+   top: -5px; /* Position it slightly above the top of the line */
+   left: 50%;
+   transform: translateX(-50%); /* Center it horizontally */
+   width: 10px; /* Width of the circle */
+   height: 10px; /* Height of the circle */
+   background-color: #DB1F26; /* Red background color */
+   border-radius: 50%; /* Make it round */
+}
+
+.stat-separator-bottom {
+   position: relative; /* Needed for absolute positioning of pseudo-elements */
+   height: 50px; /* Height of the separator line */
+   width: 2px; /* Width of the separator line */
+   background-color: #fff; /* White separator line */
+   margin: 0 20px; /* Horizontal margin */
+}
+
+.stat-separator-bottom::after {
+   content: '';
+   position: absolute;
+   bottom: -5px; /* Position it slightly below the bottom of the line */
+   left: 50%;
+   transform: translateX(-50%); /* Center it horizontally */
+   width: 10px; /* Width of the circle */
+   height: 10px; /* Height of the circle */
+   background-color: #DB1F26; /* Red background color */
+   border-radius: 50%; /* Make it round */
+}
+
+.team-section {
+   text-align: center; /* Center text */
+   color: #1D3556;
+   padding: 2em; /* Padding around the section */
+   margin-top: 5em;
+   margin-left: 110px;
+   margin-right: 110px;
+}
+
+.team-header {
+   display: flex;
+   align-items: center; /* Center items vertically */
+   justify-content: space-between; /* Space out title and paragraph */
+}
+
+
+.team-title {
+   font-size: 2em; /* Large font size for the title */
+   color: #1D3556; /* Title color */
+   flex: 1; /* Take up the remaining space */
+   margin-left: 40px; /* Adjust based on your layout and button size */
+   text-align: left;
+
+}
+
+.team-description {
+   flex: 1; /* Allow paragraph to take up space */
+   margin-right: 40px; /* Adjust as needed */
+   text-align: left;
+   /* Text styling for paragraph */
+}
+
+
+.team-btn-container {
+   display: flex; /* Use flexbox to layout children */
+   align-items: center; /* Align children vertically */
+   justify-content: flex-start; /* Align children to the start (left) */
+}
+
+.team-btn {
+   background-color: #DB1F26; /* Red background */
+   color: white;
+   padding: 0.5em 1em;
+   border-radius: 20px; /* Rounded corners */
+   text-decoration: none; /* Remove underline from link */
+   margin-right: auto; /* Pushes other items to the right */
+   margin-bottom: 2em; /* Space below the button */
+   cursor: text;
+}
+
+.team-button {
+   background-color: #DB1F26; /* Red background */
+   color: white;
+   padding: 0.5em 1em;
+   border-radius: 20px; /* Rounded corners */
+   text-decoration: none; /* Remove underline */
+   display: inline-block; /* For proper spacing */
+   margin-bottom: 1em; /* Space between button and title */
+}
+
+.team-title {
+   margin-bottom: 1em; /* Space below the title */
+   font-size: 2em; /* Large font size */
+   color: #1D3556; /* Title color */
+}
+
+.team-grid {
+   display: grid;
+   color: #1D3556; /* Title color */
+   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+   gap: 1em; /* Space between items */
+}
+
+.team-member {
+   padding: 1em;
+   opacity: 0;
+   transform: translateY(40px);
+   transition: opacity 2s ease-out, transform 2s ease-out;
+   border-radius: 10px; /* Rounded corners */
+}
+
+.team-member.visible {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+.team-photo {
+   width: 100px; /* Adjust size as needed */
+   height: 100px;
+   border-radius: 50%; /* Circle photo */
+   margin-bottom: 0.5em;
+}
+
+.social-link {
+   /* Styles for social media links */
+   color: #1D3556; /* Adjust color */
+   text-decoration: none; /* Remove underline */
+}
+.linkedin-link {
+   display: inline-block; /* To properly size and position the link */
+   margin-top: 10px; /* Space above the LinkedIn icon */
+   /* Other styles... */
+}
+
+.linkedin-icon {
+   width: 24px; /* Adjust the size of the LinkedIn icon as needed */
+   height: auto; /* Maintain aspect ratio */
+   /* Other styles... */
+}
+
+.solutions-section {
+   
+   display: flex;
+   align-items: center; /* Vertically aligns children */
+   justify-content: space-between; /* Spaces out the children */
+   background-color: #1D3556; /* Adjust the background color as needed */
+   color: white; /* Adjust text color as needed */
+   padding: 2em; /* Adjust padding as needed */
+}
+
+.solutions-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   overflow: hidden; /* Ensures the images don't overflow the section */
+   width: auto;
+   height: 465px;
+   background-color: #1D3556;
+   /* Other styles... */
+}
+
+.solutions-decorative-left {
+   position: left;
+   display: flex;
+   padding-top: 8em;
+   top: 0;
+   left: 0;
+   /* Set the width or height as needed and let the other be auto to maintain aspect ratio */
+   width: 220px; /* Example width, adjust as needed */
+   transform: translateY(-60px);
+   height: auto;
+   /* Add any additional styles such as transform */
+}
+
+.solutions-decorative-right {
+   position: absolute;
+   top: 0;
+   padding-top: 3em;
+   padding-right: 5em;
+   right: 0;
+   /* Set the width or height as needed and let the other be auto to maintain aspect ratio */
+   width: 350px; /* Example width, adjust as needed */
+   transform: translateY(-30px);
+   height: auto;
+   /* Add any additional styles such as transform */
+}
+
+.solutions-decorative-right2 {
+   position: absolute;
+   top: 0;
+   padding-right: 5em;
+   padding-top: 3em;
+   right: 0;
+   /* Set the width or height as needed and let the other be auto to maintain aspect ratio */
+   width: 350px; /* Example width, adjust as needed */
+   height: auto;
+   transform: translateX(-30px);
+}
+
+
+.solutions-background {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   z-index: 1;
+}
+
+.solutions-pattern {
+   position: absolute;
+   top: 4405.15px;
+   left: 103.7px;
+   transform: rotate(-135.72deg);
+   z-index: 2;
+}
+
+.solutions-vector {
+   position: absolute;
+   top: 4163.46px;
+   left: 1182px;
+   width: 272.62px;
+   height: 315.02px;
+   border: 1px solid #EEEEEE;
+   z-index: 2;
+}
+
+.solutions-header h2 {
+   font-size: 3em; /* Adjust to your preference */
+   color: #FFFFFF;
+   text-align: center;
+   font-weight: normal; /* Removes bold styling */
+   margin-bottom: 0.5em; /* Adjust space between header and content */
+   white-space: pre-line; /* Respects manual line breaks */
+}
+
+.solutions-content p {
+   font-size: 1em; /* Adjust to your preference */
+   color: #FFFFFF;
+   text-align: center;
+   font-weight: normal; /* Removes bold styling */
+   max-width: 600px; /* Adjust to your preference, constrains text to a max width */
+   margin-left: auto; /* Centers the paragraph if there is a max width */
+   margin-right: auto; /* Centers the paragraph if there is a max width */
+}
+
+/* Applied when elements are visible */
+.solutions-header.visible, .solutions-content.visible {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+.solutions-buttons {
+   display: flex;
+   justify-content: center;
+   padding-top: 1em;
+   gap: 20px;
+}
+
+/* Update button styles if needed */
+.btn {
+   /* Add your styles for buttons */
+   text-decoration: none; /* Removes underline */
+   color: white; /* Button text color */
+   background-color: #DB1F26; /* Button background color */
+   padding: 0.5em 1em; /* Button padding */
+   border-radius: 20px; /* Rounded corners for buttons */
+   display: inline-block; /* Allows buttons to have padding and margin */
+   margin: 0.5em; /* Space around buttons */
+   z-index: 1;
+   transition: background-color 0.2s; /* Smooth background color transition */
+}
+
+.btn:hover {
+   transform: scale(1.05); /* Slightly increase size on hover for effect */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for depth */
+}
+
+.get-started {
+   background: #DB1F26;
+   color: #FFFFFF;
+}
+
+.our-services {
+   background: #FFFFFF;
+   color: #1D3556;
+   border: 1px solid #4D607B;
+}
+
+
+.news-section {
+   margin-left: 110px;
+   margin-right: 110px;
+   text-align: center; /* Center text */
+   color: #1D3556;
+   padding: 2em; /* Padding around the section */
+   margin-top: 5em;
+}
+
+.news-header {
+   display: flex;
+   align-items: center; /* Center items vertically */
+   justify-content: space-between; /* Space out title and paragraph */
+}
+
+
+.news-title {
+   font-size: 2em; /* Large font size for the title */
+   color: #1D3556; /* Title color */
+   flex: 1; /* Take up the remaining space */
+   margin-left: 40px; /* Adjust based on your layout and button size */
+   text-align: left;
+
+}
+
+.news-description {
+   flex: 1; /* Allow paragraph to take up space */
+   margin-right: 40px; /* Adjust as needed */
+   text-align: left;
+   /* Text styling for paragraph */
+}
+
+
+.news-btn-container {
+   display: flex; /* Use flexbox to layout children */
+   align-items: center; /* Align children vertically */
+   justify-content: flex-start; /* Align children to the start (left) */
+}
+
+.news-btn {
+   background-color: #DB1F26; /* Red background */
+   color: white;
+   padding: 0.5em 1em;
+   border-radius: 20px; /* Rounded corners */
+   text-decoration: none; /* Remove underline from link */
+   margin-right: auto; /* Pushes other items to the right */
+   margin-bottom: 2em; /* Space below the button */
+   cursor: text;
+}
+
+.news-blog-button {
+   background-color: #DB1F26; /* Red background */
+   color: white;
+   padding: 0.5em 1em;
+   border-radius: 20px; /* Rounded corners */
+   text-decoration: none; /* Removes underline from the link */
+   display: inline-block; /* To properly size and position the button */
+   margin-bottom: 1em; /* Space below the button */
+}
+
+.news-cards-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: flex-start; /* Align cards to the top */
+   gap: 1em; /* Spacing between cards */
+}
+
+.news-card {
+   opacity: 0;
+   transform: translateY(30px);
+   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+   background-color: white; /* White background for the card */
+   border-radius: 10px; /* Rounded corners for the card */
+   overflow: hidden; /* Ensures nothing spills outside the border-radius */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+   text-align: left; /* Align text to the left */
+   width: calc(28%); /* Adjust width to be one third of the container minus gap */
+   margin: 1em; /* Spacing around each card */
+   transition: transform 0.3s ease-in-out; /* Smooth transform on hover */
+}
+
+.news-card.visible {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+.news-card:hover {
+   transform: translateY(-5px); /* Lift card up slightly on hover */
+}
+
+.news-card img {
+   width: 100%; /* Ensure the image covers the card width */
+   height: auto; /* Maintain aspect ratio */
+   object-fit: cover; /* Ensures the image covers the card area */
+   object-position: center; /* Center the image within the card */
+}
+
+.news-card h3 {
+   font-size: 0.9em; /* Larger text for the title */
+   margin: 0.5em; /* Spacing around the title */
+   padding: 0 1em; /* Padding inside the card for the title */
+   border-bottom: 1px dotted #ccc; /* Dotted line under the title */
+}
+
+.news-card .news-date {
+   font-size: 0.9em; /* Smaller text for the date */
+   margin: 0.5em; /* Spacing around the date */
+   padding: 0 1em; /* Padding inside the card for the date */
+   color: #777; /* Gray color for the date text */
+}
+
+.news-card .news-details-link {
+   font-size: 0.9em; /* Smaller text for the details link */
+   margin: 0.5em; /* Spacing around the details link */
+   padding: 0 1em; /* Padding inside the card for the details link */
+   color: #1D3556; /* Dark blue for the details text */
+   text-decoration: none; /* No underline for the link */
+   display: flex; /* Use flexbox for aligning the arrow icon */
+   align-items: center; /* Align items vertically */
+   gap: 0.5em; /* Spacing between text and arrow icon */
+}
+
+.news-card .news-details-link::after {
+   content: '>'; /* Adds arrow icon */
+   font-size: 1.2em; /* Larger size for the arrow icon */
+   color: #DB1F26; /* Red color for the arrow icon */
+}
+.news-section-see-all-link{
+   text-align: right;
+   position: relative;
+   color: #4D607B;
+}
+
+/* New Testimonial Section Styles */
+.testimonial-section {
+   margin-left: 110px;
+   margin-right: 110px;
+   text-align: center; /* Center text */
+   color: #1D3556;
+   margin-top: 5em; /* Adjust as needed, independent of services-section */
+}
+
+.testimonial-header {
+   display: flex;
+   align-items: center; /* Center items vertically */
+   justify-content: center; /* Center the header content */
+   flex-direction: column; /* Stack items vertically */
+}
+
+.testimonial-title {
+   font-size: 2.5em; /* Large font size for the title */
+   padding-top: 1em; /* Space above the description */
+   color: #1D3556; /* Title color */
+   margin: 4; /* Reset margin to avoid inheriting from .services-title */
+   text-align: center;
+}
+
+.testimonial-description {
+   /* Allow paragraph to take up space */
+   text-align: center;
+   margin-left: auto; /* Center the description horizontally */
+   margin-right: auto;
+   max-width: 55%;
+   padding-top: 2em; /* Space above the description */
+   /* Additional styling for description as needed */
+}
+
+.testimonial-section .testimonial-btn {
+   padding-bottom: 1em auto; /* Top and bottom margins as 1em, left and right margins auto for centering */
+   /* Any additional specific styles for the testimonial button */
+}
+
+/* Ensure the container for the button allows centering */
+.testimonial-btn-container {
+   text-align: center; /* Center align children */
+   /* No need for flexbox styles if you're just centering a single button */
+}
+
+.testimonial-content {
+   display: flex;
+   align-items: center; /* Align the items vertically */
+   justify-content: space-around; /* Space between photo and review */
+   margin: 2em 0; /* Margin around the content */
+   padding-right: 1em;
+}
+
+.testimonial {
+   position: absolute; /* Make the active testimonial part of the document flow */
+   top: 0;
+   left: 0;
+   right: 0;
+   opacity: 0; /* Start with 0 opacity */
+   width: 100%; /* Ensure each testimonial takes full width of the container */
+   pointer-events: none; /* Disable pointer events on inactive testimonials */
+}
+
+.testimonial.active {
+   position: relative; /* Make the active testimonial part of the document flow */
+   transition: opacity 1.5s ease, max-height 0.5s ease; /* Smooth transition for opacity and max-height */
+   opacity: 1; /* Fully visible */
+   pointer-events: auto; /* Enable pointer events */
+}
+
+
+
+.client-photo {
+   height: 550px; /* Adjust height as needed */
+   width: 486px;
+   background-size: cover;
+   background-position: center;
+   border-radius: 40px 40px 0 40px; /* Rounded corners except bottom right */
+   margin-left: -2em; /* Space between the photo and the review */
+   padding-right: 5em;
+}
+
+.client-review {
+   flex: 1; /* Take up the remaining space */
+   padding-left: 10em;
+   text-align: left;
+   padding: 1em; /* Padding around the text */
+   border-radius: 0px; /* Rounded corners for the review box */
+}
+
+
+
+.client-review-header {
+   align-items: right; /* Align items vertically in the center */
+   justify-content: space-between; /* Align items to the start of the container */
+   display: flex; /* Use flexbox to align items on the same line */
+}
+
+.quote-logo {
+   position: relative;
+   text-align: left; /* Center the quote logo if it's a block or text */
+}
+
+.quote-photo {
+   display: inline-block; /* Allows us to set dimensions */
+   width: 70px; /* Width of the quote image */
+   height: 70px; /* Height of the quote image */
+   background-size: contain; /* Ensure the image fits the dimensions without stretching */
+   background-repeat: no-repeat; /* Do not repeat the background image */
+   margin: 0 -10px; /* Add some space around the quote marks */
+}
+
+/* If the quote marks are supposed to "bracket" the testimonial text */
+.testimonial-content:before,
+.testimonial-content:after {
+   content: ''; /* This is necessary for pseudo-elements */
+   display: inline-block; /* Treat them as inline elements */
+   width: 50px; /* Width of the quote image */
+   height: 50px; /* Height of the quote image */
+   background: url('quote.png') no-repeat center center; /* Adjust with the correct path */
+   background-size: contain;
+}
+
+/* Add the quote images before and after the testimonial text */
+.testimonial-content:before {
+   margin-right: 10px; /* Space after the opening quote mark */
+}
+
+.testimonial-content:after {
+   margin-left: 10px; /* Space before the closing quote mark */
+}
+
+
+.client-name {
+   font-weight: bold;
+   padding-top: 2em;
+   font-size: 1.1em; /* Slightly larger font size for emphasis */
+   text-align: left;
+}
+
+.client-position {
+   text-align: left;
+   font-size: 1em;
+}
+
+.client-position::after {
+   content: '';
+   display: block;
+   margin: 8px auto; /* Centers the line and adds space above and below */
+   width: 100%; /* Adjust the width as per your design */
+   border-bottom: 1px solid #E6E6E6; /* Adjust the color as per your design */
+}
+.rating-container {
+   position: relative;
+   text-align: right; 
+   padding-left: 10em;
+   align-items: right; /* Align items vertically in the center */
+   justify-content: right; /* Align items to the start of the container */
+
+}
+
+.rating {
+   color: #DB1F26; /* Gold color for stars */
+   font-size: 1.5em; /* Larger size for stars */
+   padding: 0.5em 0; /* Space above and below the rating */
+   text-align: right;
+   
+}
+
+/* Navigation arrows */
+.testimonial-navigation {
+   display: flex;
+   justify-content: center; /* Center the navigation arrows */
+   align-items: center;
+   padding-top: 1em; /* Space above the navigation arrows */
+}
+
+/* Navigation arrows */
+.nav-left, .nav-right {
+   cursor: pointer;
+   font-size: 1.1em; /* Size of the arrow text */
+   border: 1px solid #1D3556; /* Border color and size */
+   border-radius: 50%; /* Make the border rounded */
+   width: 40px; /* Width of the circle */
+   height: 40px; /* Height of the circle */
+   display: inline-flex; /* Use flexbox for alignment */
+   align-items: center; /* Center the arrow vertically */
+   justify-content: center; /* Center the arrow horizontally */
+   margin: 0 10px; /* Spacing between the arrows */
+   background: white; /* Background color */
+   color: #1D3556; /* Arrow color */
+   text-align: center; /* Ensure the arrow is centered if it falls back to inline */
+   line-height: 40px; /* Center the arrow if flexbox is not supported */
+   user-select: none; /* Prevents the text from being selectable */
+}
+
+/* Hover effect for arrows */
+.nav-left:hover, .nav-right:hover {
+   border-color: #333; /* Darker border on hover */
+   color: #333; /* Darker arrow color on hover */
+}
+
+.arrow-photo {
+   display: inline-block; /* Allows us to set dimensions */
+   width: 70%; /* Width of the quote image */
+   height: 40%; /* Height of the quote image */
+   background-size: contain; /* Ensure the image fits the dimensions without stretching */
+   background-repeat: no-repeat; /* Do not repeat the background image */
+   margin: 0 -15px; /* Add some space around the quote marks */
+}
+
+.contact-section {
+   margin-left: 110px;
+   margin-right: 110px;
+   text-align: center; /* Center text */
+   color: #1D3556;
+   padding: 2em; /* Padding around the section */
+   margin-top: 5em;
+}
+
+.contact-header {
+   display: flex;
+   align-items: center; /* Center items vertically */
+   justify-content: space-between; /* Space out title and paragraph */
+}
+
+
+.contact-title {
+   font-size: 2em; /* Large font size for the title */
+   color: #1D3556; /* Title color */
+   flex: 1; /* Take up the remaining space */
+   margin-left: 40px; /* Adjust based on your layout and button size */
+   text-align: left;
+
+}
+
+.contact-description {
+   flex: 1; /* Allow paragraph to take up space */
+   margin-right: 40px; /* Adjust as needed */
+   text-align: left;
+   /* Text styling for paragraph */
+}
+
+
+.contact-btn-container {
+   display: flex; /* Use flexbox to layout children */
+   align-items: center; /* Align children vertically */
+   justify-content: flex-start; /* Align children to the start (left) */
+}
+
+.contact-btn {
+   background-color: #DB1F26; /* Red background */
+   color: white;
+   padding: 0.5em 1em;
+   border-radius: 20px; /* Rounded corners */
+   text-decoration: none; /* Remove underline from link */
+   margin-right: auto; /* Pushes other items to the right */
+   margin-bottom: 2em; /* Space below the button */
+   cursor: text;
+}
+
+.form-container {
+   display: flex;
+   align-items: center; /* Align the items vertically */
+   justify-content: center; /* Push the children to the ends of the container */
+   width: 100%; /* Ensure the container spans the full width if it isn't already */
+}
+
+
+
+
+.contact-form-container {
+   display: flex;
+   align-items: center; /* Align the items vertically */
+   justify-content: center; /* Push the children to the ends of the container */
+   width: auto; 
+}
+
+.contact-form {
+   display: grid;
+   flex: 1;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 1em;
+   width: auto;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+   padding: 1em; /* Spacious padding for input fields */
+   border: 1px solid #EAEAEA; /* Light grey border */
+   background-color: #F7F9FB;
+   border-radius: 20px; /* Slightly rounded corners for input fields */
+   font-size: 1em; /* Appropriate font size */
+   color: #4D607B;
+}
+
+.contact-form textarea {
+   grid-column: 1 / -1; /* Span across all columns */
+   height: 250px; /* Fixed height for the textarea */
+}
+
+.contact-form button {
+   grid-column: 1 / -1; /* Span across all columns */
+   background-color: #DB1F26; /* Red background for the button */
+   color: white;
+   border: none;
+   padding: 0.5em 1em;
+   border-radius: 40px; /* Rounded corners for the button */
+   cursor: pointer;
+   font-weight: bold;
+   font-size: 1em;
+   margin-top: 1em; /* Space above the button */
+}
+
+.contact-info-container {
+   flex-basis: 40%;
+   text-align: left;
+}
+
+
+.contact-image {
+   grid-column: 2; /* Span across all columns */
+   height: 550px; /* Adjust height as needed */
+   width: 486px;
+   background-size: fill;
+   position: relative;
+   background-position: center;
+   border-radius: 40px 40px 40px 0; /* Rounded corners except bottom right */
+}
+
+.footer {
+   background: #1D3556;
+   color: white;
+   padding: 2em;
+}
+
+.footer-top {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   margin-bottom: 1em; /* Spacing between top and bottom sections */
+}
+
+.footer-section {
+   flex: 1;
+   position: relative; 
+   min-width: 200px; /* Minimum width of each footer section */
+   margin: 2em; /* Spacing around each section */
+}
+
+.footer-section-links {
+   padding-top: 1em;
+   padding-left: 10em;
+   flex: 1;
+   min-width: 200px; /* Minimum width of each footer section */
+   margin: 0.5em; /* Spacing around each section */
+}
+
+.footer-section-brand {
+   flex-basis: 100%; /* Full width on mobile, adjust as needed */
+   max-width: 300px; /* Maximum width, adjust as needed */
+   font-size: 1.1em;
+   /* Rest of your styles */
+}
+
+.footer-logo {
+   max-width: 117px; /* Adjust as necessary */
+   margin-bottom: 1em;
+   padding-left: 2em;
+}
+
+.social-links {
+   display: flex;
+   justify-content: flex-start; /* Align to the left */
+   margin-bottom: 1em;
+}
+
+.social-links a {
+   display: inline-block;
+   margin-right: 10px; /* Space between icons */
+   font-size: 1.5em; /* Adjust size as necessary */
+}
+
+footer ul {
+   list-style: none;
+   padding-left: 0;
+   font-size: 1;
+}
+
+footer ul li a {
+   color: #ccc;
+   text-decoration: none;
+   transition: color 0.3s ease;
+   display: block; /* Full-width clickable area */
+}
+
+footer ul li a:hover {
+   color: #007bff;
+}
+
+footer address {
+   font-style: normal;
+   line-height: 1.5; /* Adjust line height for better readability */
+}
+
+.footer-bottom {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   border-top: 1px solid #375278;
+   padding-top: 1em;
+}
+
+.footer-bottom ul {
+   display: flex;
+   gap: 1em;
+}
+
+.footer-bottom p, .footer-bottom ul {
+   margin: 0;
+}
+
+.social-icon {
+   display: inline-block; /* Treat the link as a block level element */
+   margin-right: 10px; /* Space between icons */
+   padding-top: 1em;
+   /* Additional styles if needed */
+}
+
+.footer-social-icon {
+   width: 24px; /* Fixed width for all icons */
+   height: 24px; /* Fixed height for all icons */
+   vertical-align: middle; /* Align the icons vertically if inline */
+   /* You can add a border, background, or other styles if necessary */
+}
+
+.footer-section::after {
+   content: '';
+   position: absolute;
+   left: 130%; /* Position the line in the middle of the footer-section */
+   transform: translateX(50%); /* Adjust the line's position to exactly half its width */
+   top: 0;
+   bottom: 0;
+   width: 1px;
+   background-color: #375278; /* Color of the line, replace with your color code */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   .hero-section h1 {
+       font-size: 2em; /* Adjust based on your design */
+   }
+
+   .hero-section {
+      height: auto; /* Adjust height for smaller screens */
+      padding: 2em 1em; /* Adjust padding for smaller screens */
+   }
+
+   .top-right-graphic {
+      width: 30%; /* Increase size for smaller screens if needed */
+      top: unset; /* Use if you want to move the graphic to the bottom */
+      bottom: 0; /* Align to the bottom */
+   }
+
+   header nav ul {
+       flex-direction: column;
+   }
+
+   header nav ul li {
+      padding: 0.5em 0; /* Adjust based on your design */
+   }
+
+   .client-logos img {
+      margin: 0.5em; /* Smaller margins for smaller screens */
+      max-height: 40px; /* Smaller logos for smaller screens */
+  }
+  .team-grid {
+      grid-template-columns: 1fr; /* Stack on smaller screens */
+   }
+   .news-cards-container {
+      justify-content: center; /* Center the cards on smaller screens */
+  }
+
+  .news-card {
+      width: calc(25%); /* Each card will take half of the width on smaller screens */
+   }
+   
+   .testimonial-content {
+      flex-direction: column; /* Stack photo and review on top of each other */
+   }
+
+  .client-photo, .client-review {
+      width: 100%; /* Full width for small screens */
+      margin: 1em 0; /* Space above and below */
+  }
+  .footer {
+      flex-direction: column;
+   }
+
+   .footer-section {
+      margin: 1em;
+      /* Adjust flex-grow if you want different proportions */
+      flex: 1;
+  }
+  .footer-section-brand {
+      flex-basis: auto; /* Auto size on larger screens */
+   }
+   .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+   }
+
+   .footer-bottom ul {
+      padding-top: 1em; /* Add space above the links on small screens */
+   }
+   .navbar-toggler {
+      display: block;
+  }
+
+  .nav-links {
+      display: none; /* Hide nav links on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+   .news-card {
+      width: 100%; /* One item per row on very small screens */
+   }
+}
