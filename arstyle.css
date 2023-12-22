@@ -12,6 +12,8 @@ html {
 body {
    font-family: 'Inter', sans-serif; /* Assuming 'Inter' is the font you're using */
    line-height: 1.6;
+   text-align: right;
+   direction: rtl;
    color: #333; /* This color for general text, adjust if needed */
 }
 
@@ -70,7 +72,7 @@ body {
 }
 
 .language-switch-button {
-   padding: 10px 20px;
+   padding: 5px 10px;
    color: #fff; /* White text color */
    text-decoration: none; /* Remove underline from links */
    border: none;
@@ -214,6 +216,7 @@ header .nav-logo img {
    color: #ffffff; /* White text */
    padding: 0.5em 1em; /* Reduced padding */
    text-decoration: none; /* No underline */
+   margin-right: 8em;
    border-radius: 40px; /* Rounded corners */
    font-size: 1.5em; /* Reduced font size */
    cursor: pointer;
@@ -483,7 +486,7 @@ header nav ul li a {
    padding: 0.5em 1em;
    border-radius: 20px; /* Rounded corners */
    text-decoration: none; /* Remove underline from link */
-   margin-right: auto; /* Pushes other items to the right */
+   margin-left: auto; /* Pushes other items to the right */
    margin-bottom: 2em; /* Space below the button */
    cursor: text;
 }
@@ -710,6 +713,7 @@ header nav ul li a {
 .team-header {
    display: flex;
    align-items: center; /* Center items vertically */
+   text-align: right; 
    justify-content: space-between; /* Space out title and paragraph */
 }
 
@@ -719,14 +723,14 @@ header nav ul li a {
    color: #1D3556; /* Title color */
    flex: 1; /* Take up the remaining space */
    margin-left: 40px; /* Adjust based on your layout and button size */
-   text-align: left;
+   text-align: right;
 
 }
 
 .team-description {
    flex: 1; /* Allow paragraph to take up space */
    margin-right: 40px; /* Adjust as needed */
-   text-align: left;
+   text-align: right;
    /* Text styling for paragraph */
 }
 
@@ -743,7 +747,7 @@ header nav ul li a {
    padding: 0.5em 1em;
    border-radius: 20px; /* Rounded corners */
    text-decoration: none; /* Remove underline from link */
-   margin-right: auto; /* Pushes other items to the right */
+   margin-left: auto; /* Pushes other items to the right */
    margin-bottom: 2em; /* Space below the button */
    cursor: text;
 }
@@ -762,6 +766,7 @@ header nav ul li a {
    margin-bottom: 1em; /* Space below the title */
    font-size: 2em; /* Large font size */
    color: #1D3556; /* Title color */
+   text-align: right;
 }
 
 .team-grid {
@@ -832,7 +837,7 @@ header nav ul li a {
 }
 
 .solutions-decorative-left {
-   position: left;
+   position: absolute;
    display: flex;
    padding-top: 8em;
    top: 0;
@@ -982,14 +987,14 @@ header nav ul li a {
    color: #1D3556; /* Title color */
    flex: 1; /* Take up the remaining space */
    margin-left: 40px; /* Adjust based on your layout and button size */
-   text-align: left;
+   text-align: right;
 
 }
 
 .news-description {
    flex: 1; /* Allow paragraph to take up space */
    margin-right: 40px; /* Adjust as needed */
-   text-align: left;
+   text-align: right;
    /* Text styling for paragraph */
 }
 
@@ -1006,7 +1011,7 @@ header nav ul li a {
    padding: 0.5em 1em;
    border-radius: 20px; /* Rounded corners */
    text-decoration: none; /* Remove underline from link */
-   margin-right: auto; /* Pushes other items to the right */
+   margin-left: auto; /* Pushes other items to the right */
    margin-bottom: 2em; /* Space below the button */
    cursor: text;
 }
@@ -1037,7 +1042,7 @@ header nav ul li a {
    border-radius: 10px; /* Rounded corners for the card */
    overflow: hidden; /* Ensures nothing spills outside the border-radius */
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
-   text-align: left; /* Align text to the left */
+   text-align: right; /* Align text to the left */
    width: calc(28%); /* Adjust width to be one third of the container minus gap */
    margin: 1em; /* Spacing around each card */
    transition: transform 0.3s ease-in-out; /* Smooth transform on hover */
@@ -1173,14 +1178,14 @@ header nav ul li a {
    background-size: cover;
    background-position: center;
    border-radius: 40px 40px 0 40px; /* Rounded corners except bottom right */
-   margin-left: -2em; /* Space between the photo and the review */
-   padding-right: 5em;
+   margin-right: -2em; /* Space between the photo and the review */
+   padding-left: 5em;
 }
 
 .client-review {
    flex: 1; /* Take up the remaining space */
-   padding-left: 10em;
-   text-align: left;
+   padding-right: 10em;
+   text-align: right;
    padding: 1em; /* Padding around the text */
    border-radius: 0px; /* Rounded corners for the review box */
 }
@@ -1188,7 +1193,7 @@ header nav ul li a {
 
 
 .client-review-header {
-   align-items: right; /* Align items vertically in the center */
+   align-items: center; /* Align items vertically in the center */
    justify-content: space-between; /* Align items to the start of the container */
    display: flex; /* Use flexbox to align items on the same line */
 }
@@ -1220,11 +1225,11 @@ header nav ul li a {
 
 /* Add the quote images before and after the testimonial text */
 .testimonial-content:before {
-   margin-right: 10px; /* Space after the opening quote mark */
+   margin-left: 10px; /* Space after the opening quote mark */
 }
 
 .testimonial-content:after {
-   margin-left: 10px; /* Space before the closing quote mark */
+   margin-right: 10px; /* Space before the closing quote mark */
 }
 
 
@@ -1232,11 +1237,11 @@ header nav ul li a {
    font-weight: bold;
    padding-top: 2em;
    font-size: 1.1em; /* Slightly larger font size for emphasis */
-   text-align: left;
+   text-align: right;
 }
 
 .client-position {
-   text-align: left;
+   text-align: right;
    font-size: 1em;
 }
 
@@ -1249,10 +1254,10 @@ header nav ul li a {
 }
 .rating-container {
    position: relative;
-   text-align: right; 
-   padding-left: 10em;
-   align-items: right; /* Align items vertically in the center */
-   justify-content: right; /* Align items to the start of the container */
+   text-align: left; 
+   padding-right: 10em;
+   align-items: left; /* Align items vertically in the center */
+   justify-content: left; /* Align items to the start of the container */
 
 }
 
@@ -1327,14 +1332,14 @@ header nav ul li a {
    color: #1D3556; /* Title color */
    flex: 1; /* Take up the remaining space */
    margin-left: 40px; /* Adjust based on your layout and button size */
-   text-align: left;
+   text-align: right;
 
 }
 
 .contact-description {
    flex: 1; /* Allow paragraph to take up space */
    margin-right: 40px; /* Adjust as needed */
-   text-align: left;
+   text-align: right;
    /* Text styling for paragraph */
 }
 
@@ -1342,7 +1347,7 @@ header nav ul li a {
 .contact-btn-container {
    display: flex; /* Use flexbox to layout children */
    align-items: center; /* Align children vertically */
-   justify-content: flex-start; /* Align children to the start (left) */
+   justify-content: flex-end; /* Align children to the start (left) */
 }
 
 .contact-btn {
@@ -1351,7 +1356,7 @@ header nav ul li a {
    padding: 0.5em 1em;
    border-radius: 20px; /* Rounded corners */
    text-decoration: none; /* Remove underline from link */
-   margin-right: auto; /* Pushes other items to the right */
+   margin-left: auto; /* Pushes other items to the right */
    margin-bottom: 2em; /* Space below the button */
    cursor: text;
 }
@@ -1390,12 +1395,14 @@ header nav ul li a {
    background-color: #F7F9FB;
    border-radius: 20px; /* Slightly rounded corners for input fields */
    font-size: 1em; /* Appropriate font size */
+   text-align: right;
    color: #4D607B;
 }
 
 .contact-form textarea {
    grid-column: 1 / -1; /* Span across all columns */
    height: 250px; /* Fixed height for the textarea */
+   text-align: right;
 }
 
 .contact-form button {
