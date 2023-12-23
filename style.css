@@ -7,7 +7,12 @@
 
 html {
    scroll-behavior: smooth;
- }
+}
+
+h1 {
+   font-size: 56px; /* Adjust the value to your preferred font size */
+}
+
  
 body {
    font-family: 'Rubik';
@@ -215,7 +220,7 @@ header .nav-logo img {
    padding: 0.5em 1em; /* Reduced padding */
    text-decoration: none; /* No underline */
    border-radius: 40px; /* Rounded corners */
-   font-size: 1.5em; /* Reduced font size */
+   font-size: 22px; /* Reduced font size */
    cursor: pointer;
    display: inline-block; /* Inline-block for proper sizing */
    white-space: nowrap; /* Keep text in a single line */
@@ -253,7 +258,7 @@ header .nav-logo img {
    padding: 0.5em 1em;
    text-decoration: none;
    border-radius: 40px;
-   font-size: 1.5em;
+   font-size: 22px; /* Reduced font size */
    text-decoration: none; /* Remove underline from links */
    display: flex; /* To allow setting padding */
    transition: background-color 0.3s, transform 0.3s;
@@ -270,6 +275,7 @@ header nav {
 
 header nav #logo {
    position: absolute;
+   font-size: 18px; /* Reduced font size */
    left: 2em; /* Adjust as needed based on your design */
    z-index: 1; /* Higher z-index to ensure header content is above the rectangle */
    top: 50%;
@@ -312,8 +318,7 @@ header nav ul li a {
    z-index: 1;
 }
 .hero-section h1 {
-    font-size: 36px; /* Adjust this value to the size you prefer */
-    /* Additional styling as needed */
+    font-size: 62px; /* Adjust this value to the size you prefer */
 }
 
 /* Center the hero content */
@@ -357,6 +362,7 @@ header nav ul li a {
    background-color: #DB1F26;
    color: #ffffff;
    padding: 0.5em 1.5em;
+   margin-top: 2em;
    text-decoration: none;
    font-weight: bold; 
    border-radius: 40px;
@@ -381,29 +387,32 @@ header nav ul li a {
 
 .hero-section h1 {
    padding-top: 0.5em;
-   font-size: 4em; /* Adjust based on your design */
+   font-size: 62px; /* Adjust based on your design */
+   width: 1003;
    color: #ffffff; /* Adjust if needed */
    margin-bottom: 0.5em; /* Adjust based on your design */
 }
 
 .hero-section p {
-   font-size: 1.2em; /* Adjust based on your design */
+   font-size: 18px; /* Reduced font size */
+   width: 994px;
    color: #ffffff; /* Adjust if needed */
    margin-bottom: 1.5em; /* Adjust based on your design */
 }
 
 .client-section {
-   position: relative;
-   margin-left: 110px;
-   margin-right: 110px;
+   position: flex;
+   margin-left: auto;
+   margin-right: auto;
    text-align: center;
+   width: 1212px;
    padding: 2em 0;
    overflow: hidden;
 }
 
 .client-title {
    margin: 2em; /* Add some space below the title */
-   font-size: 2em; /* Adjust the font size as needed */
+   font-size: 30px; /* Adjust the font size as needed */
    color: #1D3556; /* Title color */
 }
 
@@ -448,7 +457,7 @@ header nav ul li a {
    width: 1293px;
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: left;
    justify-content: center;
 }
 
@@ -459,16 +468,16 @@ header nav ul li a {
 }
 
 .services-title {
-   font-size: 2em; /* Large font size for the title */
+   font-size: 56px; /* Large font size for the title */
    color: #1D3556; /* Title color */
    flex: 1; /* Take up the remaining space */
-   margin-left: 40px; /* Adjust based on your layout and button size */
    text-align: left;
-
 }
 .services-description {
    flex: 1; /* Allow paragraph to take up space */
-   margin-right: 40px; /* Adjust as needed */
+   margin-left: 40px; /* Adjust as needed */
+   padding-left: 10px;
+   font-size: 18px; /* Large font size for the title */
    text-align: left;
    /* Text styling for paragraph */
 }
@@ -486,6 +495,7 @@ header nav ul li a {
    background-color: #DB1F26; /* Red background */
    color: white;
    padding: 0.5em 1em;
+   font-size: 18px;
    border-radius: 20px; /* Rounded corners */
    text-decoration: none; /* Remove underline from link */
    margin-right: auto; /* Pushes other items to the right */
@@ -581,8 +591,13 @@ header nav ul li a {
    box-sizing: border-box;
    width: calc(33.33% - 1em); /* Adjust the width and margin based on your design */
    box-sizing: border-box;
-   display: inline-block;
    flex-basis: calc(33.33% - 1em); /* Ensure three items per row */
+}
+
+.service-item-header {
+   display: flex;
+   align-items: flex-start; /* Align to the start (left) */
+   border-bottom: 2px dotted #ccc; /* Dotted line under the title */
 }
 
 .service-item:hover {
@@ -601,17 +616,20 @@ header nav ul li a {
 
 
 .service-item img {
-   width: 50px; /* Adjust based on your icon size */
-   height: auto; /* Maintain aspect ratio */
-   margin-right: 20px;
+   width: 32px; /* Adjust based on your icon size */
+   height: 32px; /* Maintain aspect ratio */
+   margin-bottom: 0.5em; /* Space below the service title */
 
 }
 
 .service-item h3 {
-   margin-bottom: 0.5em; /* Space below the service title */
-   flex-grow: 1;
-   border-bottom: 2px dotted #ccc; /* Dotted line under the title */
-   
+   margin-left: 1em;
+   font-size: 18px;
+}
+
+.service-item p {
+   margin-top: 0.5em; /* Space below the service title */
+   font-size: 15px;
 }
 
 .consultation-link {
@@ -619,6 +637,7 @@ header nav ul li a {
    font-weight: normal; /* Set the weight of the font */
    text-decoration: none; /* Remove underline from the link */
    position: relative; /* For positioning the pseudo-element */
+   font-size: 18px; /* Large font size for the title */
    padding-left: 30px; /* Space for the circle */
    display: flex; /* Allows the padding and pseudo-elements to work */
 }
@@ -647,6 +666,7 @@ header nav ul li a {
    align-items: center;
    justify-content: space-around;
    padding: 1em 0; /* Vertical padding */
+   height: 233px;
 }
 
 .stat-item {
@@ -654,12 +674,16 @@ header nav ul li a {
 }
 
 .stat-item h3 {
-   font-size: 2em; /* Large font size for the number */
-   margin: 0; /* Reset margin */
+   font-size: 45px; /* Large font size for the number */
+   font-weight: bold; /* Make it bold */
+   margin-bottom: 0.2em; /* Reset margin */
 }
 
 .stat-item p {
    margin: 0; /* Reset margin */
+   font-size: 18px; /* Large font size for the number */
+   font-weight: normal; /* Make it bold */
+   color: #D0D0D0;
    /* Additional styling for the description */
 }
 
@@ -713,7 +737,7 @@ header nav ul li a {
    width: 1293px;
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: left;
    justify-content: center;
 }
 
@@ -723,21 +747,20 @@ header nav ul li a {
    justify-content: space-between; /* Space out title and paragraph */
 }
 
+.team-header h2 {
+   font-size: 56px;
+}
 
 .team-title {
-   font-size: 2em; /* Large font size for the title */
    color: #1D3556; /* Title color */
-   flex: 1; /* Take up the remaining space */
-   margin-left: 40px; /* Adjust based on your layout and button size */
+   flex: 2; /* Take up the remaining space */
+   margin-right: 45px;
    text-align: left;
-
 }
 
 .team-description {
-   flex: 1; /* Allow paragraph to take up space */
-   margin-right: 40px; /* Adjust as needed */
+   flex: 1.5; /* Allow paragraph to take up space */
    text-align: left;
-   /* Text styling for paragraph */
 }
 
 
@@ -768,11 +791,7 @@ header nav ul li a {
    margin-bottom: 1em; /* Space between button and title */
 }
 
-.team-title {
-   margin-bottom: 1em; /* Space below the title */
-   font-size: 2em; /* Large font size */
-   color: #1D3556; /* Title color */
-}
+
 
 .team-grid {
    display: grid;
@@ -789,6 +808,14 @@ header nav ul li a {
    border-radius: 10px;
    width: 100%; /* Make each team member take up 100% of the column width */
    box-sizing: border-box;
+}
+
+.team-member h3 {
+   font-size: 18px;
+}
+
+.team-member p {
+   font-size: 16px;
 }
 
 .team-member.visible {
@@ -911,7 +938,7 @@ header nav ul li a {
 }
 
 .solutions-header h2 {
-   font-size: 3em; /* Adjust to your preference */
+   font-size: 56px; /* Adjust to your preference */
    color: #FFFFFF;
    text-align: center;
    font-weight: normal; /* Removes bold styling */
@@ -920,8 +947,8 @@ header nav ul li a {
 }
 
 .solutions-content p {
-   font-size: 1em; /* Adjust to your preference */
-   color: #FFFFFF;
+   font-size: 18px; /* Adjust to your preference */
+   color: #EEEEEE;
    text-align: center;
    font-weight: normal; /* Removes bold styling */
    max-width: 600px; /* Adjust to your preference, constrains text to a max width */
@@ -979,7 +1006,7 @@ header nav ul li a {
    width: 1293px;
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: left;
    justify-content: center;
    text-align: center; /* Center text */
    color: #1D3556;
@@ -995,19 +1022,19 @@ header nav ul li a {
 
 
 .news-title {
-   font-size: 2em; /* Large font size for the title */
+   font-size: 56px; /* Large font size for the title */
    color: #1D3556; /* Title color */
    flex: 1; /* Take up the remaining space */
-   margin-left: 40px; /* Adjust based on your layout and button size */
    text-align: left;
+   padding-right: 1em;
 
 }
 
 .news-description {
-   flex: 1; /* Allow paragraph to take up space */
-   margin-right: 40px; /* Adjust as needed */
+   flex: 0.8; /* Allow paragraph to take up space */
+   font-size: 18px; /* Large font size for the title */
    text-align: left;
-   /* Text styling for paragraph */
+
 }
 
 
@@ -1020,6 +1047,7 @@ header nav ul li a {
 .news-btn {
    background-color: #DB1F26; /* Red background */
    color: white;
+   font-size: 18px; /* Large font size for the title */
    padding: 0.5em 1em;
    border-radius: 20px; /* Rounded corners */
    text-decoration: none; /* Remove underline from link */
@@ -1041,9 +1069,10 @@ header nav ul li a {
 .news-cards-container {
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-around;
+   justify-content: center;
    align-items: flex-start;
    gap: 1em;
+   
 }
 
 .news-card {
@@ -1053,11 +1082,9 @@ header nav ul li a {
    background-color: white;
    border-radius: 10px;
    overflow: hidden;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
    text-align: left;
-   width: calc(31% - 1em); /* Adjust width to be one third of the container minus gap */
-   margin: 1em;
-   box-sizing: border-box;
+   height: 462px;
+   width: 398px; /* Adjust width to be one third of the container minus gap */
    transition: transform 0.3s ease-in-out;
 }
 
@@ -1072,27 +1099,33 @@ header nav ul li a {
 
 .news-card img {
    width: 100%; /* Ensure the image covers the card width */
-   height: auto; /* Maintain aspect ratio */
+   height: 273px; /* Ensure the image covers the card height */
    object-fit: cover; /* Ensures the image covers the card area */
-   object-position: center; /* Center the image within the card */
+   object-position: top left; /* Align the image to the top left corner */
+   top: 0;
+   left: 0;
+   border-radius: 10px; /* Apply border-radius directly on the image */
 }
 
+
+
 .news-card h3 {
-   font-size: 0.9em; /* Larger text for the title */
+   font-size: 26px; /* Larger text for the title */
+   color: #1D3556;
+   font-weight: medium;
    margin: 0.5em; /* Spacing around the title */
-   padding: 0 1em; /* Padding inside the card for the title */
    border-bottom: 1px dotted #ccc; /* Dotted line under the title */
 }
 
 .news-card .news-date {
-   font-size: 0.9em; /* Smaller text for the date */
+   font-size: 16px; /* Smaller text for the date */
    margin: 0.5em; /* Spacing around the date */
    padding: 0 1em; /* Padding inside the card for the date */
-   color: #777; /* Gray color for the date text */
+   color: #4D607B; /* Gray color for the date text */
 }
 
 .news-card .news-details-link {
-   font-size: 0.9em; /* Smaller text for the details link */
+   font-size: 16px; /* Smaller text for the date */
    margin: 0.5em; /* Spacing around the details link */
    padding: 0 1em; /* Padding inside the card for the details link */
    color: #1D3556; /* Dark blue for the details text */
@@ -1135,7 +1168,8 @@ header nav ul li a {
 }
 
 .testimonial-title {
-   font-size: 2.5em; /* Large font size for the title */
+   font-size: 56px; /* Large font size for the title */
+   font-weight: medium;
    padding-top: 1em; /* Space above the description */
    color: #1D3556; /* Title color */
    margin: 4; /* Reset margin to avoid inheriting from .services-title */
@@ -1146,6 +1180,7 @@ header nav ul li a {
    /* Allow paragraph to take up space */
    text-align: center;
    margin-left: auto; /* Center the description horizontally */
+   font-size: 18px; /* Large font size for the title */
    margin-right: auto;
    max-width: 55%;
    padding-top: 2em; /* Space above the description */
@@ -1202,6 +1237,7 @@ header nav ul li a {
 
 .client-review {
    flex: 1; /* Take up the remaining space */
+   font-size: 18px; /* Large font size for the title */
    padding-left: 10em;
    text-align: left;
    padding: 1em; /* Padding around the text */
@@ -1254,13 +1290,13 @@ header nav ul li a {
 .client-name {
    font-weight: bold;
    padding-top: 2em;
-   font-size: 1.1em; /* Slightly larger font size for emphasis */
+   font-size: 20px; /* Slightly larger font size for emphasis */
    text-align: left;
 }
 
 .client-position {
    text-align: left;
-   font-size: 1em;
+   font-size: 18px;
 }
 
 .client-position::after {
@@ -1335,7 +1371,7 @@ header nav ul li a {
    width: 1293px;
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: left;
    justify-content: center;
    text-align: center; /* Center text */
    color: #1D3556;
@@ -1346,24 +1382,24 @@ header nav ul li a {
 .contact-header {
    display: flex;
    align-items: center; /* Center items vertically */
+   gap: 1em;
    justify-content: space-between; /* Space out title and paragraph */
 }
 
 
 .contact-title {
-   font-size: 2em; /* Large font size for the title */
+   font-size: 56px; /* Large font size for the title */
+   font-weight: medium;
    color: #1D3556; /* Title color */
-   flex: 1; /* Take up the remaining space */
-   margin-left: 40px; /* Adjust based on your layout and button size */
+   flex: 1.5; /* Take up the remaining space */
    text-align: left;
 
 }
 
 .contact-description {
    flex: 1; /* Allow paragraph to take up space */
-   margin-right: 40px; /* Adjust as needed */
    text-align: left;
-   /* Text styling for paragraph */
+   padding: 2em;
 }
 
 
