@@ -403,16 +403,17 @@ header nav ul li a {
    margin-bottom: 1.5em; /* Adjust based on your design */
 }
 
+/* Client Section Styles */
 .client-section {
    position: flex;
    margin-left: auto;
    margin-right: auto;
    text-align: center;
-   width: 1212px;
-   padding: 2em 0;
-   overflow: hidden;
+   width: 100%; /* Make it full-width */
+   padding: 2em 1em; /* Adjust padding for smaller screens */
+   overflow-x: auto; /* Enable horizontal scrolling */
+   white-space: nowrap; /* Prevent wrapping to the next line */
 }
-
 
 .client-title {
    margin: 2em; /* Add some space below the title */
@@ -421,9 +422,9 @@ header nav ul li a {
 }
 
 .client-logos img {
-   margin: 0 1em; /* Add horizontal space between logos */
-   vertical-align: middle; /* Align logos vertically in the middle */
-   max-height: 50px; /* Adjust based on your design */
+   margin: 0.5em; /* Add some space around logos */
+   vertical-align: middle;
+   max-height: 40px; /* Adjust based on your design */
    transition: transform 0.5s ease;
    transform: scale(1); /* Default state */
    /* If logos are different sizes, you might want to set a max-width as well */
@@ -439,9 +440,9 @@ header nav ul li a {
 }
 
 .logo {
-   margin: 0 1em; /* Space between logos and separators */
+   margin: 0.5em; /* Space around logos and separators */
    vertical-align: middle;
-   max-height: 50px; /* Control the size of the logos */
+   max-height: 40px; /* Control the size of the logos */
 }
 
 .separator {
@@ -482,7 +483,7 @@ header nav ul li a {
    margin-left: 40px; /* Adjust as needed */
    padding-left: 10px;
    font-size: 18px; /* Large font size for the title */
-   text-align: left;
+   text-align: right;
    /* Text styling for paragraph */
 }
 .services-subtitle {
@@ -922,7 +923,6 @@ header nav ul li a {
    width: 100%;
    height: 100%;
    overflow: hidden;
-   z-index: 1;
 }
 
 .solutions-pattern {
@@ -1256,7 +1256,7 @@ header nav ul li a {
 
 .quote-logo {
    position: relative;
-   text-align: left; /* Center the quote logo if it's a block or text */
+   text-align: right; /* Center the quote logo if it's a block or text */
 }
 
 .quote-photo {
@@ -1310,7 +1310,7 @@ header nav ul li a {
 }
 .rating-container {
    position: relative;
-   text-align: left; 
+   text-align: right; 
    padding-right: 10em;
    align-items: left; /* Align items vertically in the center */
    justify-content: left; /* Align items to the start of the container */
@@ -1481,7 +1481,7 @@ header nav ul li a {
 
 .contact-info-container {
    flex-basis: 40%;
-   text-align: left;
+   text-align: right;
 }
 
 
@@ -1616,52 +1616,365 @@ footer address {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-   .hero-section h1 {
-       font-size: 2em; /* Adjust based on your design */
+   header {
+      display: flex; /* Show the navbar toggler for smaller screens */
+      text-align: center; /* Center text within the header */
    }
 
-   .hero-section {
-      height: auto; /* Adjust height for smaller screens */
-      padding: 2em 1em; /* Adjust padding for smaller screens */
+   .header-content {
+      width: 100%; /* Take full width on smaller screens */
+      padding: 1em; /* Adjust padding for smaller screens */
    }
 
-   .top-right-graphic {
-      width: 30%; /* Increase size for smaller screens if needed */
-      top: unset; /* Use if you want to move the graphic to the bottom */
-      bottom: 0; /* Align to the bottom */
+   header .nav-logo img {
+      padding-left: 0;
+      margin-bottom: 1em;
+   }
+
+   .nav-links {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      text-align: center; /* Center text within the navigation */
+   }
+
+   .nav-links li {
+      padding: 1em 0; /* Add vertical space between links */
+   }
+
+   header nav {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      text-align: center; /* Center text within the navigation */
+   }
+
+   header nav #logo {
+      position: relative;
+      left: 0;
+      transform: translateY(0); /* Reset vertical centering */
    }
 
    header nav ul {
-       flex-direction: column;
+      margin: 1em 0; /* Add vertical space between links */
    }
 
-   header nav ul li {
-      padding: 0.5em 0; /* Adjust based on your design */
+   .navbar-toggler {
+      display: block; /* Show the navbar toggler for smaller screens */
+      margin-bottom: 1em; /* Add margin to separate it from the logo */
+      margin-right: auto; /* Add margin to separate it from the logo */
+   }
+
+
+   .hero-section {
+      padding: 2em; /* Adjust padding for smaller screens */
+      max-height: auto; /* Allow content to determine height */
+      background-attachment: fixed;
+      background-image: url('/images/background-mobile.png'); /* Change the path to your mobile background image */
+   }
+
+   .hero-section h1 {
+      font-size: 42px;
+      line-height: 36px;
+   }
+
+   .hero-section p {
+      font-size: 15px;
+      line-height: 24px;
+      margin-bottom: 30px;
+      width: auto;
+   }
+
+   .cta-button2 {
+      font-size: 15px;
+      margin-bottom: 30px;
+   }
+
+   .cta-button-hero {
+      font-size: 18px;
+      margin-top: 1em; /* Adjust margin for the "Let's Talk" button */
+   }
+
+   .cta-button-header {
+      display: none; /* Hide the contact button on smaller screens */
+   }
+
+   .client-title {
+      width: 100%; /* Make the title take full width on smaller screens */
+      text-align: center; /* Center the title */
+      padding-left: 3em;
+      white-space: normal; /* Allow wrapping on smaller screens */
+   }
+
+   .client-logos {
+      flex-wrap: wrap; /* Allow logos to wrap to the next line */
+      justify-content: center; /* Center logos horizontally on smaller screens */
    }
 
    .client-logos img {
-      margin: 0.5em; /* Smaller margins for smaller screens */
-      max-height: 40px; /* Smaller logos for smaller screens */
-  }
-  .team-grid {
-      grid-template-columns: 1fr; /* Stack on smaller screens */
+      flex: 0 0 0 0 40%; /* Make logos take full width on smaller screens */
+      max-width: 80%; /* Ensure logos don't exceed the container width */
    }
-   .news-cards-container {
-      justify-content: center; /* Center the cards on smaller screens */
-  }
 
-  .news-card {
-      width: calc(25%); /* Each card will take half of the width on smaller screens */
+   .services-section {
+      width: auto;
    }
+
+   .services-grid {
+      justify-content: center; /* Center items horizontally */
+   }
+
+   .service-item {
+      width: 100%; /* Full width for smaller screens */
+      box-sizing: border-box;
+      flex-basis: 100%; /* Full width for smaller screens */
+   }
+
+   .services-title {
+      font-size: 24px; /* Adjust font size for mobile screens */
+   }
+
+   .services-description {
+      font-size: 14px; /* Adjust font size for mobile screens */
+   }
+
+   .service-btn {
+      margin-bottom: 1em; /* Add some space below the button for mobile screens */
+   }
+
+   .service-item h3 {
+      font-size: 14px; /* Adjust font size for mobile screens */
+   }
+
+   .service-item p {
+      font-size: 12px; /* Adjust font size for mobile screens */
+   }
+
+   .consultation-link {
+      font-size: 14px; /* Adjust font size for mobile screens */
+   }
+
+   .consultation-link::before {
+      width: 8px; /* Adjust circle width for mobile screens */
+      height: 8px; /* Adjust circle height for mobile screens */
+   }
+
+   .stats-section {
+      padding: 2em 1em; /* Adjust padding for smaller screens */
+   }
+
+   .stat-item h3 {
+      font-size: 24px; /* Adjust font size for mobile screens */
+   }
+
+   .stat-item p {
+      font-size: 14px; /* Adjust font size for mobile screens */
+   }
+
+   .team-section {
+      width: auto;
+   }
+
+   .team-header h2 {
+      font-size: 24px; /* Adjust font size for mobile screens */
+      margin-bottom: 1em; /* Add some space below the title */
+   }
+
+   .team-title {
+      color: #1D3556; /* Title color */
+      flex: 1; /* Take up the remaining space */
+      text-align: right;
+      margin-bottom: 1em; /* Add some space below the title */
+   }
+
    
-   .testimonial-content {
-      flex-direction: column; /* Stack photo and review on top of each other */
+
+   .team-description {
+      flex: 1; /* Allow paragraph to take up space */
+      text-align: right;
+      margin-bottom: 2em; /* Add some space below the description */
+      margin-left: 1em; /* Add some space below the description */
    }
 
-  .client-photo, .client-review {
-      width: 100%; /* Full width for small screens */
-      margin: 1em 0; /* Space above and below */
-  }
+   .team-title,
+   .team-description,
+   .team-btn-container {
+      margin-right: 0; /* Reset right margin on smaller screens */
+      margin-bottom: 1em; /* Add some space below each section on smaller screens */
+   }
+
+
+   .team-grid {
+      display: flex; /* Display team members in a row on smaller screens */
+      flex-wrap: wrap; /* Allow team members to wrap onto the next line */
+      justify-content: space-around; /* Space them evenly */
+   }
+
+
+
+   .solutions-section {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      justify-content: center;
+      padding: 1em; /* Adjust padding for smaller screens */
+   }
+
+   .solutions-container {
+      width: 100%; /* Full width of the container */
+      height: auto; /* Allow content to determine height */
+      padding-top: 3em;
+   }
+
+   .solutions-header h2 {
+      font-size: 28px; /* Adjust font size for smaller screens */
+   }
+
+   .solutions-content p {
+      width: 80%;
+      font-size: 14px; /* Adjust font size for smaller screens */
+   }
+
+   .solutions-decorative-left,
+   .solutions-decorative-right,
+   .solutions-decorative-right2 {
+      position: absolute; /* Reset position for smaller screens */
+      width: 10%; /* Full width of the container */
+      height: auto; /* Allow content to determine height */
+      transform: none; /* Reset transform for smaller screens */
+   }
+
+   .news-section {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%; /* Full width of the container */
+      display: flex;
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      align-items: left; /* Center items horizontally */
+      justify-content: center;
+      text-align: right; /* Center text */
+      color: #1D3556;
+      padding: 2em; /* Padding around the section */
+      margin-top: 5em;
+   }
+
+   .news-title {
+      font-size: 36px; /* Adjust font size for smaller screens */
+   }
+
+   .news-description {
+      font-size: 16px; /* Adjust font size for smaller screens */
+   }
+
+   .news-btn {
+      font-size: 16px; /* Adjust font size for smaller screens */
+   }
+
+   .news-cards-container {
+      justify-content: center; /* Center cards on smaller screens */
+   }
+
+   .news-card {
+      width: 100%; /* Take full width on smaller screens */
+      margin-bottom: 1em; /* Add space between cards on smaller screens */
+   }
+
+   .news-card img {
+      height: auto; /* Allow the image to determine its height on smaller screens */
+   }
+
+   .news-section-see-all-link {
+      text-align: center; /* Center text on smaller screens */
+   }
+
+   .testimonial-section {
+      width: 100%; /* Full width of the container */
+   }
+
+   .testimonial-content {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      align-items: center; /* Center the items horizontally */
+   }
+
+   .client-photo {
+      height: auto; /* Adjust height as needed */
+      width: 100%; /* Take full width on smaller screens */
+      margin-left: 0; /* Reset margin for smaller screens */
+      padding-right: 0; /* Reset padding for smaller screens */
+      border-radius: 40px 40px 0 40px; /* Rounded corners except bottom right */
+   }
+
+   .testimonial-title {
+      font-size: 24px; /* Adjust font size for smaller screens */
+   }
+
+   .testimonial-description {
+      font-size: 14px; /* Adjust font size for smaller screens */
+      max-width: 90%; /* Adjust max-width for smaller screens */
+   }
+
+   .testimonial-section .testimonial-btn {
+      font-size: 14px; /* Adjust font size for smaller screens */
+   }
+
+   .client-photo {
+      margin-left: auto;
+      margin-right: auto;
+      height: 200px; /* Adjust height as needed for smaller screens */
+   }
+
+   .client-review {
+      font-size: 14px; /* Adjust font size for smaller screens */
+   }
+
+   .client-name,
+   .client-position {
+      font-size: 16px; /* Adjust font size for smaller screens */
+   }
+
+   .rating {
+      font-size: 1em; /* Adjust font size for smaller screens */
+   }
+
+   .contact-section {
+      width: 100%; /* Full width of the container */
+   }
+
+   .contact-title {
+      font-size: 40px; /* Adjust font size for smaller screens */
+   }
+
+   .contact-description {
+      font-size: 16px; /* Adjust font size for smaller screens */
+   }
+
+   .contact-btn {
+      font-size: 14px; /* Adjust font size for smaller screens */
+   }
+
+   .contact-form textarea {
+      height: 150px; /* Adjusted height for the textarea on smaller screens */
+   }
+
+   .contact-image {
+      display: none;
+   }
+
+   .form-container {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+   }
+
+   .contact-form-container {
+      width: 100%; /* Full width of the container on smaller screens */
+   }
+
+   .contact-form {
+      grid-template-columns: 1fr; /* Single column on smaller screens */
+      width: 100%; /* Full width of the container on smaller screens */
+   }
+
+   .contact-form textarea {
+      height: 200px; /* Adjusted height for the textarea on smaller screens */
+   }
+   .contact-info-container {
+      flex-basis: 100%; /* Full width of the container on smaller screens */
+      text-align: center; /* Center text on smaller screens */
+   }
+
   .footer {
       flex-direction: column;
    }
@@ -1695,4 +2008,7 @@ footer address {
    .news-card {
       width: 100%; /* One item per row on very small screens */
    }
+   .service-item {
+      width: 100%;
+  }
 }
