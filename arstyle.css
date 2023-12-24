@@ -307,7 +307,6 @@ header nav ul li a {
    justify-content: center;
    align-items: center;
    background-image: url('/images/background.png');
-   background-attachment: fixed;
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
@@ -315,9 +314,9 @@ header nav ul li a {
    text-align: center;
    padding: 4em 2em;
    width: auto; /* Full width of the container */
-   height: 764px; /* Full height of the container */
-   z-index: 1;
+   height: calc(100vh - 110px);
 }
+
 .hero-section h1 {
     font-size: 62px; /* Adjust this value to the size you prefer */
     /* Additional styling as needed */
@@ -1664,11 +1663,11 @@ footer address {
 
    .hero-section {
       padding: 2em; /* Adjust padding for smaller screens */
+      /* Remove background-attachment: fixed; for better mobile experience */
+      background-size: cover; /* Keep it as cover for a better effect */
       max-height: auto; /* Allow content to determine height */
-      background-attachment: fixed;
-      background-image: url('/images/background-mobile.png'); /* Change the path to your mobile background image */
    }
-
+   
    .hero-section h1 {
       font-size: 42px;
       line-height: 36px;
