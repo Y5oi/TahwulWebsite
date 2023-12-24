@@ -1086,7 +1086,7 @@ header nav ul li a {
    background-color: white;
    border-radius: 10px;
    overflow: hidden;
-   text-align: left;
+   text-align: right;
    height: 462px;
    width: 398px; /* Adjust width to be one third of the container minus gap */
    transition: transform 0.3s ease-in-out;
